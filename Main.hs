@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------- 
--- Module      : The Master Mind Game
+-- Module      : The Mastermind Game
 -- Copyright   : (c) Kwanghoon Choi, 2014
 -- License     : BSD3
 --
