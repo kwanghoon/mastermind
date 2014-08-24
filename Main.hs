@@ -83,7 +83,7 @@ main = do
              else do { putStrLn "Not a number"; main }
     _     -> do { putStrLn "Oops";  main }
 
--- Generate all n-digit numbers
+-- Generates all n-digit numbers
 nDigitNumbers :: Int -> [[Int]]
 nDigitNumbers 0 = [[]]
 nDigitNumbers n = [ n:ns | ns <- nDigitNumbers (n-1), n <- [0..9] ]
@@ -123,7 +123,7 @@ getAnswer x = do
         else do { putStrLn msg; putStr (show x); putStr " ? "; getAnswer x }
     _ -> do { putStrLn msg; putStr (show x); putStr " ? "; getAnswer x }
 
--- Get a list of words from user
+-- Gets a list of words from user
 getLine :: String -> [String] -> IO [String]
 getLine word line = do
   ch <- getChar  
@@ -132,7 +132,7 @@ getLine word line = do
   else if ch == ' ' then getLine "" (word:line)
   else getLine (word ++[ch]) line
 
--- Find the next guess by verifying the consistency with all the answers
+-- Finds the next guess by verifying the consistency with all the answers
 -- from user. If no more guess is available, he or she must answer 
 -- inconsistently. Otherwise, the mastermind will always find the next guess.
 next :: [([Int], (Int,Int))] -> [[Int]] -> IO ([Int], [[Int]])
